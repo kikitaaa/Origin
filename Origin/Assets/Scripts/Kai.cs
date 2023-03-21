@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Kai : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class Kai : MonoBehaviour
     public float jumpforce;
     public float maxheightofjump;
     private bool onfloor = false;
-    public float health= 100f;
-    public GameObject healthbar;
+    public float health;
+    public Slider healthbar;
 
 
     void Awake()
@@ -68,10 +69,10 @@ public class Kai : MonoBehaviour
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
         }
     }
-    private void CheckHealth()
+   private void CheckHealth()
     {
         {
-          healthbar.transform.localScale = new Vector3(health / 8f, 1f, 1f);
+            healthbar.value = health;
         }
 
     }
