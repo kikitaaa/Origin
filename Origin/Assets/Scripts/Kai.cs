@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Kai : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Kai : MonoBehaviour
     private bool onfloor = false;
     public float health;
     public Slider healthbar;
+    public float jumps = 0;
 
 
     void Awake()
@@ -33,17 +35,16 @@ public class Kai : MonoBehaviour
         ProcessMovement();
         ProcessJump();
         CheckHealth();
-
     }
     private void FixedUpdate()
     {
         Vector2 RayCastOrigin = transform.position - new Vector3(0, GetComponent<Collider2D>().bounds.extents.y, 0);
-        onfloor = Physics2D.Raycast(RayCastOrigin, -Vector2.up, 0.1f);
+        Physics2D.Raycast(RayCastOrigin, -Vector2.up, 0.1f);
 
-        if (rb.velocity.y > maxheightofjump)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, maxheightofjump);
-        }
+        //if (rb.velocity.y > maxheightofjump)
+        //{
+        //    rb.velocity = new Vector2(rb.velocity.x, maxheightofjump);
+        //}
 
 
     }
@@ -64,9 +65,12 @@ public class Kai : MonoBehaviour
     }
     private void ProcessJump()
     {
-        if (Input.GetButtonDown("Jump") && onfloor)
+        if (Input.GetButtonDown("Jump") && (onfloor || jumps > 0 && jumps < 2))
         {
+            jumps++;
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
+            onfloor = false;
+            //  AudioManager.instance.PlayAudio(jumpclip, 1);
         }
     }
    private void CheckHealth()
@@ -90,6 +94,7 @@ public class Kai : MonoBehaviour
         if (other.collider.CompareTag("floor"))
         {
             onfloor= true;
+            jumps = 0;
         }
     }
     public void Death()
