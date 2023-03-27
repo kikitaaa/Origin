@@ -88,7 +88,6 @@ public class Kai : MonoBehaviour
             Death(); // El personaje ha muerto
         }
     }
-
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.CompareTag("floor"))
