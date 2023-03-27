@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Buttonfunctions : MonoBehaviour
 {
+    public GameObject PauseMenu;
+
     public void PauseTimer() //Pausamos el timer.
     {
         Time.timeScale = 0;
@@ -17,6 +19,15 @@ public class Buttonfunctions : MonoBehaviour
     {
        GameManager.instance.ResetPunt(0);
     }
+    public void PauseMenuoON()
+    {
+        PauseMenu.SetActive(true);
+    }
+    public void PauseMenuoOFF()
+    {
+        PauseMenu.SetActive(false);
+    }
+
     public void ChangeScene(string name) //Cambiamos a la escena designada, en este caso iria al menu principal y limpiamos la lista de audios.
     {
         SceneManager.LoadScene(name);
