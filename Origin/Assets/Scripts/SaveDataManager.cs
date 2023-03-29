@@ -6,12 +6,14 @@ using UnityEngine;
 public class SaveDataManager : MonoBehaviour
 {
     public GameObject player;
+    public GameObject camPos;
+    public GameObject gamemanager;
     public string savefile;
     public GameData gamedata = new GameData();
 
     private void Awake()
     {
-        savefile = Application.dataPath + "/gamedata.json";
+        savefile = Application.dataPath + "/SaveData.json";
         player = GameObject.FindGameObjectWithTag("Player");
         LoadData();
     }
@@ -23,6 +25,12 @@ public class SaveDataManager : MonoBehaviour
             gamedata = JsonUtility.FromJson<GameData>(content);
             Debug.Log("Archivo Cargado");
             player.transform.position = gamedata.position;
+            camPos.transform.position = gamedata.cameraposition;
+            player.GetComponent<Kai>().health = gamedata.playerhealth;
+            gamemanager.GetComponent<GameManager>().points = gamedata.score;
+            gamemanager.GetComponent<GameManager>().time = gamedata.time;
+
+
         }
         else
         {
@@ -33,7 +41,11 @@ public class SaveDataManager : MonoBehaviour
     {
         GameData newdata = new GameData()
         {
-            position = player.transform.position 
+            position = player.transform.position,
+            cameraposition = camPos.transform.position,
+            playerhealth = player.GetComponent<Kai>().health,
+            score = gamemanager.GetComponent<GameManager>().points,
+            time = gamemanager.GetComponent<GameManager>().time
         };
 
         string jsonstring = JsonUtility.ToJson(newdata);

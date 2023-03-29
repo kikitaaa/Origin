@@ -6,4 +6,7 @@ public class GameData
 {
     public Vector3 position;
     public Vector3 cameraposition;
+    public float playerhealth;
+    public int score;
+    public float time;
 }
