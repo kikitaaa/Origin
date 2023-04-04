@@ -8,6 +8,7 @@ public class SaveDataManager : MonoBehaviour
     public GameObject player;
     public GameObject camPos;
     public GameObject gamemanager;
+    public GameObject time;
     public string savefile;
     public GameData gamedata = new GameData();
 
@@ -28,7 +29,7 @@ public class SaveDataManager : MonoBehaviour
             camPos.transform.position = gamedata.cameraposition;
             player.GetComponent<Kai>().health = gamedata.playerhealth;
             gamemanager.GetComponent<GameManager>().points = gamedata.score;
-            gamemanager.GetComponent<GameManager>().time = gamedata.time;
+            time.GetComponent<UpdateTimer>().time = gamedata.time;
 
 
         }
@@ -45,7 +46,7 @@ public class SaveDataManager : MonoBehaviour
             cameraposition = camPos.transform.position,
             playerhealth = player.GetComponent<Kai>().health,
             score = gamemanager.GetComponent<GameManager>().points,
-            time = gamemanager.GetComponent<GameManager>().time
+            time = time.GetComponent<UpdateTimer>().time
         };
 
         string jsonstring = JsonUtility.ToJson(newdata);

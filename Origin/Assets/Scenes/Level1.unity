@@ -1134,6 +1134,7 @@ MonoBehaviour:
   player: {fileID: 1731811817}
   camPos: {fileID: 519420028}
   gamemanager: {fileID: 1924851438}
+  time: {fileID: 646277987}
   savefile: 
 --- !u!4 &881235817
 Transform:
