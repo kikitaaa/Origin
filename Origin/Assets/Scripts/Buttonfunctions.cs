@@ -19,11 +19,11 @@ public class Buttonfunctions : MonoBehaviour
     {
        GameManager.instance.ResetPunt(0);
     }
-    public void PauseMenuoON()
+    public void PauseMenuoON() //Activa el menú de pausa.
     {
         PauseMenu.SetActive(true);
     }
-    public void PauseMenuoOFF()
+    public void PauseMenuoOFF() //Desactiva el menú de pausa.
     {
         PauseMenu.SetActive(false);
     }

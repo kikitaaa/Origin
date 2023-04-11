@@ -35,6 +35,8 @@ public class Kai : MonoBehaviour
         ProcessMovement();
         ProcessJump();
         CheckHealth();
+        //Healing();
+        SpeedMultiplier();
     }
     private void FixedUpdate()
     {
@@ -66,12 +68,34 @@ public class Kai : MonoBehaviour
             //  AudioManager.instance.PlayAudio(jumpclip, 1);
         }
     }
-   private void CheckHealth()
+   // private void Healing()
+   // {
+     //   if (Input.GetButtonDown("Fire3"))
+   //     {
+   //         Heal(20);
+  //      }
+ //   }
+    private void SpeedMultiplier()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            SpeedMult(2);
+        }
+    }
+    public void SpeedMult(int amount)
+    {
+        velocity *= amount;
+    }
+    private void CheckHealth()
     {
         {
             healthbar.value = health; //Sincronizamos la salud del personaje con la barra de salud.
         }
 
+    }
+    public void Heal(int amount)
+    {
+        health += amount;
     }
     public void TakeDamage(float damage) //El jugador toma el daño que inflingen sus enemigos y resta su vida.
     {
