@@ -38,21 +38,12 @@ public class Kai : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        // Usamos un Raycast para lanzar un rayo que detecte el contacto con el suelo.
         Vector2 RayCastOrigin = transform.position - new Vector3(0, GetComponent<Collider2D>().bounds.extents.y, 0);
         Physics2D.Raycast(RayCastOrigin, -Vector2.up, 0.1f);
-
-        //if (rb.velocity.y > maxheightofjump)
-        //{
-        //    rb.velocity = new Vector2(rb.velocity.x, maxheightofjump);
-        //}
-
-        //animacion
-        
-
     }
-    private void ProcessMovement()
+    private void ProcessMovement() 
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         float movhor = Input.GetAxisRaw("Horizontal"); //Si pulsamos los botones designados al Axis Horizontal, se inicia el movimiento del personaje.
         Debug.Log(movhor);
         animator.SetBool("isWalking", movhor != 0);
@@ -74,7 +65,7 @@ public class Kai : MonoBehaviour
     }
     private void ProcessJump()
     {
-        if (Input.GetButtonDown("Jump") && (onfloor || jumps > 0 && jumps < 2))
+        if (Input.GetButtonDown("Jump") && (onfloor || jumps > 0 && jumps < 2)) //Si pulsamos la tecla designada al "Jump", "onfloor" es true y el n�mero de saltos es menor que 2 el jugador podr� saltar.
         {
             jumps++;
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
@@ -85,16 +76,16 @@ public class Kai : MonoBehaviour
    private void CheckHealth()
     {
         {
-            healthbar.value = health;
+            healthbar.value = health; //Sincronizamos la salud del personaje con la barra de salud.
         }
 
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage) //El jugador toma el da�o que inflingen sus enemigos y resta su vida.
     {
         health -= damage;
         if (health <= 0)
         {
-            Death(); // El personaje ha muerto
+            Death(); // Si la salud del personaje llega a 0 se invoca el m�todo Death().
         }
     }
     void OnCollisionEnter2D(Collision2D other)
