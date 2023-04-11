@@ -47,20 +47,27 @@ public class Kai : MonoBehaviour
     private void ProcessMovement() 
     {
         float movhor = Input.GetAxisRaw("Horizontal"); //Si pulsamos los botones designados al Axis Horizontal, se inicia el movimiento del personaje.
+        Debug.Log(movhor);
+        animator.SetBool("isWalking", movhor != 0);
         rb.velocity = new Vector2(movhor * velocity, rb.velocity.y);
+
+       
 
         if (movhor > 0)
         {
             rend.flipX = false;
+          
         }
+
         else if (movhor < 0)
         {
             rend.flipX = true; //si el movhor es mayor que 0 el personaje gira.
         }
+
     }
     private void ProcessJump()
     {
-        if (Input.GetButtonDown("Jump") && (onfloor || jumps > 0 && jumps < 2)) //Si pulsamos la tecla designada al "Jump", "onfloor" es true y el número de saltos es menor que 2 el jugador podrá saltar.
+        if (Input.GetButtonDown("Jump") && (onfloor || jumps > 0 && jumps < 2)) //Si pulsamos la tecla designada al "Jump", "onfloor" es true y el nï¿½mero de saltos es menor que 2 el jugador podrï¿½ saltar.
         {
             jumps++;
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
@@ -97,12 +104,12 @@ public class Kai : MonoBehaviour
     {
         health += amount;
     }
-    public void TakeDamage(float damage) //El jugador toma el daño que inflingen sus enemigos y resta su vida.
+    public void TakeDamage(float damage) //El jugador toma el daï¿½o que inflingen sus enemigos y resta su vida.
     {
         health -= damage;
         if (health <= 0)
         {
-            Death(); // Si la salud del personaje llega a 0 se invoca el método Death().
+            Death(); // Si la salud del personaje llega a 0 se invoca el mï¿½todo Death().
         }
     }
     void OnCollisionEnter2D(Collision2D other)
