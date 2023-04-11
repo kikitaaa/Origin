@@ -46,22 +46,31 @@ public class Kai : MonoBehaviour
         //    rb.velocity = new Vector2(rb.velocity.x, maxheightofjump);
         //}
 
+        //animacion
+        
 
     }
     private void ProcessMovement()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         float movhor = Input.GetAxisRaw("Horizontal"); //Si pulsamos los botones designados al Axis Horizontal, se inicia el movimiento del personaje.
+        Debug.Log(movhor);
+        animator.SetBool("isWalking", movhor != 0);
         rb.velocity = new Vector2(movhor * velocity, rb.velocity.y);
+
+       
 
         if (movhor > 0)
         {
             rend.flipX = false;
+          
         }
+
         else if (movhor < 0)
         {
             rend.flipX = true; //si el movhor es mayor que 0 el personaje gira.
         }
+
     }
     private void ProcessJump()
     {
