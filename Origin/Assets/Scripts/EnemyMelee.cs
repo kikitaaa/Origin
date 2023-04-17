@@ -6,7 +6,7 @@ public class EnemyMelee : MonoBehaviour
 {
     [SerializeField] private Transform MeleeController;
     public float MeleeRadius;
-    public float Meleedamage;
+    public int Meleedamage;
     // Start is called before the first frame update
     void Start()
     {

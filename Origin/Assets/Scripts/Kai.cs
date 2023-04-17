@@ -15,10 +15,10 @@ public class Kai : MonoBehaviour
     public float jumpforce;
     public float maxheightofjump;
     private bool onfloor = false;
-    public float health;
+    public int health;
     public Slider healthbar;
     public float jumps = 0;
-
+    public int healvalue = 20;
 
     void Awake()
     {
@@ -35,8 +35,8 @@ public class Kai : MonoBehaviour
         ProcessMovement();
         ProcessJump();
         CheckHealth();
-        //Healing();
-        SpeedMultiplier();
+       // Healing();
+       // SpeedMultiplier();
     }
     private void FixedUpdate()
     {
@@ -47,7 +47,7 @@ public class Kai : MonoBehaviour
     private void ProcessMovement() 
     {
         float movhor = Input.GetAxisRaw("Horizontal"); //Si pulsamos los botones designados al Axis Horizontal, se inicia el movimiento del personaje.
-        Debug.Log(movhor);
+        //Debug.Log(movhor);
         animator.SetBool("isWalking", movhor != 0);
         rb.velocity = new Vector2(movhor * velocity, rb.velocity.y);
 
@@ -75,13 +75,14 @@ public class Kai : MonoBehaviour
             //  AudioManager.instance.PlayAudio(jumpclip, 1);
         }
     }
-   // private void Healing()
-   // {
-     //   if (Input.GetButtonDown("Fire3"))
-   //     {
-   //         Heal(20);
-  //      }
- //   }
+    private void Healing()
+    {
+       if (Input.GetButtonDown("Fire3") && (health  < 100))
+        {
+           Heal(health + healvalue <= 100 ? healvalue : 100 - health);
+        }
+
+   }
     private void SpeedMultiplier()
     {
         if (Input.GetButtonDown("Fire2"))
@@ -104,7 +105,7 @@ public class Kai : MonoBehaviour
     {
         health += amount;
     }
-    public void TakeDamage(float damage) //El jugador toma el da�o que inflingen sus enemigos y resta su vida.
+    public void TakeDamage(int damage) //El jugador toma el da�o que inflingen sus enemigos y resta su vida.
     {
         health -= damage;
         if (health <= 0)
