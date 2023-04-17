@@ -6,7 +6,7 @@ public class GameData //Creación de una nueva clase con nombre GameData.
 {
     public Vector3 position; //Toma las coordenadas de la posición del player.
     public Vector3 cameraposition; // Toma las coordenadas de la posición de la camara.
-    public float playerhealth; //Toma los datos de la salud del player.
+    public int playerhealth; //Toma los datos de la salud del player.
     public int score; //Toma los datos de la puntuación del player.
     public float time; //Toma los datos del tiempo de la partida.
 }

@@ -11,7 +11,6 @@ public class HealthPotion : Potion
     }
     public override void Use(Kai player)
     {
-        if (Input.GetButtonDown("Fire3"))
-            player.Heal(20);
+            player.Heal(value);
     }
 }
