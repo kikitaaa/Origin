@@ -11,9 +11,9 @@ public class Potion
         this.name = name;
         this.value = value;
     }
-    public virtual void Use(Kai player)
+    public virtual void UsePotion(Kai player)
     {
-        //player.Heal(value);
+        player.Heal(value);
         //player.SpeedMult(value);
     }
 }

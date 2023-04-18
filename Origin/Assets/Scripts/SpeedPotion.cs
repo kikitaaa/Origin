@@ -9,7 +9,7 @@ public class SpeedPotion : Potion
         {
             this.SpeedMultiplier = SpeedMultiplier;
         }
-    public override void Use(Kai player)
+    public override void UsePotion(Kai player)
     {
         player.SpeedMult(value);
     }

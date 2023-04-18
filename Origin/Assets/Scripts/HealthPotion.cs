@@ -9,8 +9,8 @@ public class HealthPotion : Potion
     {
         this.HealAmount = HealAmount;
     }
-    public override void Use(Kai player)
+    public override void UsePotion(Kai player)
     {
-            player.Heal(value);
+            player.Healing(HealAmount);
     }
 }

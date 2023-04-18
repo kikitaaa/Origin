@@ -18,8 +18,8 @@ public class Kai : MonoBehaviour
     public int health;
     public Slider healthbar;
     public float jumps = 0;
-    public int healvalue = 20;
 
+    public Inventory inventory;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -75,12 +75,9 @@ public class Kai : MonoBehaviour
             //  AudioManager.instance.PlayAudio(jumpclip, 1);
         }
     }
-    private void Healing()
+    public void Healing(int healvalue)
     {
-       if (Input.GetButtonDown("Fire3") && (health  < 100))
-        {
-           Heal(health + healvalue <= 100 ? healvalue : 100 - health);
-        }
+        Heal(health + healvalue <= 100 ? healvalue : 100 - health);
 
    }
     private void SpeedMultiplier()

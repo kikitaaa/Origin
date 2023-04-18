@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject player;
-    public Potion[] potions;
-    // Start is called before the first frame update
+    public List<Potion> InventoryObjects = new List<Potion>();
     void Start()
     {
-        potions = new Potion[2];
-        potions[0] = new HealthPotion("HealthPotion", 2, 10);
-        potions[1] = new SpeedPotion("SpeedPotion", 3, 2);
-    }
+        InventoryObjects.Add(new HealthPotion("HealthPotion", 2, 10));
+        InventoryObjects.Add(new SpeedPotion("SpeedPotion", 1, 2));
 
-    // Update is called once per frame
-    void Update()
+    }
+    private void Update()
     {
         
+    }
+
+    public virtual void UseHealthPotion(Kai player)
+    {
+        //potion.UsePotion();
+        // buscar una apocion de sqaluid, usarla y eliminarla
+        InventoryObjects[0].UsePotion(player);
     }
 }
