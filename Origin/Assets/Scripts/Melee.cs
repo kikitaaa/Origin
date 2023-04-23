@@ -9,10 +9,11 @@ public class Melee : MonoBehaviour
     public float Meleedamage;
     public float timetoattack;
     public float timetonextattack;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,13 @@ public class Melee : MonoBehaviour
         {
             Attack();
             timetonextattack = timetoattack;
+            animator.SetBool("isAttacking", true);
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            animator.SetBool("isAttacking", false);
+        }
+
     }
     public void Attack()
     {
@@ -35,8 +42,9 @@ public class Melee : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.transform.GetComponent<Leonix>().TakeDamage(Meleedamage);
+                collider.transform.GetComponent<Luputon>().TakeDamage(Meleedamage);
                 Debug.Log("golpe");
+                
             }
         }
     }
@@ -45,4 +53,6 @@ public class Melee : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(meleeController.position, meleeRadius);
     }
+
+  
 }
