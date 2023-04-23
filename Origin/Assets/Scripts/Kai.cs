@@ -35,7 +35,7 @@ public class Kai : MonoBehaviour
         ProcessMovement();
         ProcessJump();
         CheckHealth();
-       // Healing();
+        //Healing(10);
        // SpeedMultiplier();
     }
     private void FixedUpdate()
@@ -79,7 +79,7 @@ public class Kai : MonoBehaviour
     {
         Heal(health + healvalue <= 100 ? healvalue : 100 - health);
 
-   }
+    }
     private void SpeedMultiplier()
     {
         if (Input.GetButtonDown("Fire2"))

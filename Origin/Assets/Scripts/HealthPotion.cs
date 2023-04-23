@@ -11,6 +11,6 @@ public class HealthPotion : Potion
     }
     public override void UsePotion(Kai player)
     {
-            player.Healing(HealAmount);
+       player.Healing(HealAmount);
     }
 }

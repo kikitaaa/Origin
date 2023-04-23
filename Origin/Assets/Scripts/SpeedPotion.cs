@@ -11,6 +11,6 @@ public class SpeedPotion : Potion
         }
     public override void UsePotion(Kai player)
     {
-        player.SpeedMult(value);
+        player.SpeedMult(SpeedMultiplier);
     }
 }

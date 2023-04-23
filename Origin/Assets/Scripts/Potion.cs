@@ -13,7 +13,7 @@ public class Potion
     }
     public virtual void UsePotion(Kai player)
     {
-        player.Heal(value);
-        //player.SpeedMult(value);
+        player.Healing(value);
+        player.SpeedMult(value);
     }
 }
