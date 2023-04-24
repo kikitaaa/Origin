@@ -19,7 +19,7 @@ public class Kai : MonoBehaviour
     public Slider healthbar;
     public float jumps = 0;
 
-    public Inventory inventory;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,8 +35,7 @@ public class Kai : MonoBehaviour
         ProcessMovement();
         ProcessJump();
         CheckHealth();
-        //Healing(10);
-       // SpeedMultiplier();
+
     }
     private void FixedUpdate()
     {
@@ -80,13 +79,7 @@ public class Kai : MonoBehaviour
         Heal(health + healvalue <= 100 ? healvalue : 100 - health);
 
     }
-    private void SpeedMultiplier()
-    {
-        if (Input.GetButtonDown("Fire2"))
-        {
-            SpeedMult(2);
-        }
-    }
+
     public void SpeedMult(int amount)
     {
         velocity *= amount;

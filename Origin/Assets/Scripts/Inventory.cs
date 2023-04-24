@@ -5,15 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<Potion> InventoryObjects = new List<Potion>();
-    void Start()
-    {
-        InventoryObjects.Add(new HealthPotion("HealthPotion", 1, 20));
-        Debug.Log("Pociones de salud agregadas.");
-        InventoryObjects.Add(new SpeedPotion("SpeedPotion", 1, 2));
-        Debug.Log("Pociones de velocidad agregadas.");
-        Debug.Log(InventoryObjects.Count);
 
-    }
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
