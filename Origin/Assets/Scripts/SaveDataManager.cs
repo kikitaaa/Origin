@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveDataManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class SaveDataManager : MonoBehaviour
     public GameObject camPos;
     public GameObject gamemanager;
     public GameObject time;
+    public GameObject coins;
+    public GameObject coinsPos;
     public string savefile;
     public GameData gamedata = new GameData();
 
@@ -31,6 +34,8 @@ public class SaveDataManager : MonoBehaviour
             player.GetComponent<Kai>().health = gamedata.playerhealth;
             gamemanager.GetComponent<GameManager>().points = gamedata.score;
             time.GetComponent<UpdateTimer>().time = gamedata.time;
+            coins.GetComponent<Shop>().coins = gamedata.coins;
+            coinsPos.transform.position = gamedata.position;
 
 
         }
@@ -47,7 +52,9 @@ public class SaveDataManager : MonoBehaviour
             cameraposition = camPos.transform.position,
             playerhealth = player.GetComponent<Kai>().health,
             score = gamemanager.GetComponent<GameManager>().points,
-            time = time.GetComponent<UpdateTimer>().time
+            time = time.GetComponent<UpdateTimer>().time,
+            coins = coins.GetComponent<Shop>().coins,
+            coinsPos = coinsPos.GameObject()
         };
 
         string jsonstring = JsonUtility.ToJson(newdata); //Transforma el objeto de tipo GameData en formato JSON utilizando la clase JsonUtility de Unity.
