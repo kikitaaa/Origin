@@ -18,7 +18,6 @@ public class Kai : MonoBehaviour
     public int health;
     public Slider healthbar;
     public float jumps = 0;
-    public int gold = 0;
 
     void Awake()
     {

@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    public Inventory inventory;
+    public static Shop instance; 
+    public Inventory inventory; // Invocamos al Inventario.
     public int coins = 0; // Valor inicial de la moneda
     public TMPro.TMP_Text textcoinsText; // Referencia al objeto Text en el canvas
 
     private void Start()
     {
-        UpdateCoinsText();
+        UpdateCoinsText(); // Llamamos al método UpdateCoinsText.
     }
     public void BuyHealthPotion()
     {
         if (coins >= 10) // Verifica si hay suficientes monedas para comprar la poción
         {
-            inventory.InventoryObjects.Add(new HealthPotion("HealthPotion", 1, 10));
+            inventory.InventoryObjects.Add(new HealthPotion("HealthPotion", 1, 10)); // Sihay dinero suficiente, se agrega una poción al inventario.
             coins -= 10; // Resta el valor de la poción de las monedas
             Debug.Log("Poción de curación comprada.");
             UpdateCoinsText();
@@ -40,12 +41,12 @@ public class Shop : MonoBehaviour
             Debug.Log("No tienes suficientes monedas.");
         }
     }
-    public void UpdateCoinsText()
+    public void UpdateCoinsText() //Actualizamos el texto de coins y lo mostramos.
     {
         textcoinsText.text = "Coins: " + coins.ToString();
     }
 
-    public void AddCoins(int amount)
+    public void AddCoins(int amount) // Agregamos coins segun la cantidad asignada.
     {
         coins += amount;
     }

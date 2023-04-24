@@ -1,4 +1,5 @@
- using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); //Si hay otro GameManager lo destruye.
         }
+    }
+
+    internal void AddCoins(int coinValue)
+    {
+        throw new NotImplementedException();
     }
 
     // Update is called once per frame
