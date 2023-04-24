@@ -28,11 +28,11 @@ public class Buttonfunctions : MonoBehaviour
     {
         PauseMenu.SetActive(false);
     }
-    public void ShopMenuoON() //Activa el menú de pausa.
+    public void ShopMenuoON() //Activa el menú de tienda.
     {
         shop.SetActive(true);
     }
-    public void ShopMenuoOFF() //Desactiva el menú de pausa.
+    public void ShopMenuoOFF() //Desactiva el menú de tienda.
     {
         shop.SetActive(false);
     }
