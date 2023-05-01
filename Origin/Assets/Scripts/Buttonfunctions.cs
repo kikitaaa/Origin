@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class Buttonfunctions : MonoBehaviour
 {
     public GameObject PauseMenu;
-    public GameObject shop;
+    public GameObject Shop;
+    public GameObject HealthPotion;
+    public GameObject SpeedPotion;
+  
 
     public void PauseTimer() //Pausamos el timer.
     {
@@ -30,11 +33,15 @@ public class Buttonfunctions : MonoBehaviour
     }
     public void ShopMenuoON() //Activa el menú de tienda.
     {
-        shop.SetActive(true);
+        Shop.SetActive(true);
+        SceneManager.LoadScene("Shop");
+     
+
     }
     public void ShopMenuoOFF() //Desactiva el menú de tienda.
     {
-        shop.SetActive(false);
+        Shop.SetActive(false);
+        SceneManager.LoadScene("Level1");
     }
     public void ChangeScene(string name) //Cambiamos a la escena designada, en este caso iria al menu principal y limpiamos la lista de audios.
     {
@@ -51,4 +58,6 @@ public class Buttonfunctions : MonoBehaviour
     {
         Application.Quit();
     }
+   
+
 }

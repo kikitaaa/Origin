@@ -5,6 +5,20 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<Potion> InventoryObjects = new List<Potion>();  // Creamos una lista pública de objetos "Potion" llamada "InventoryObjects" y la inicializamos como una lista vacía.
+    public static Inventory instance;
+     
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void Update()
     {
@@ -78,5 +92,6 @@ public class Inventory : MonoBehaviour
         {
             InventoryObjects.Remove(potionToRemove);
         }
+       
     }
 }
