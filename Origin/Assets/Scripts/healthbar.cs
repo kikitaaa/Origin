@@ -9,10 +9,10 @@ public class healthbar : MonoBehaviour
     public GameObject Player;
     public void Start()
     {
-        UIImagen = GameObject.Find("Vida").GetComponent<Image>();
+        UIImagen = GameObject.Find("healthbar").GetComponent<Image>();
     }
     public void Update()
     {
-        UIImagen.sprite = Resources.Load<Sprite>("Barra de vidas/" + Player.GetComponent<Kai>().life.ToString());
+        UIImagen.sprite = Resources.Load<Sprite>("healthbar/" + Player.GetComponent<Kai>().health.ToString());
     }
 }
