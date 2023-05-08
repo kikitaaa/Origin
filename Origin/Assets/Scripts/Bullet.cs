@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public float maxTime = 5;
     private float currentTime = 0;
     private List<string> nombres;
+    public GameObject[] hearts;
+    private int life;
 
     private void Start()
     {
@@ -42,5 +44,34 @@ public class Bullet : MonoBehaviour
 
             currentTime = 0;
         }
+
+        if (life > 0)
+        {
+            life--;
+        }
+         else if (life < 1)
+        {
+
+        }
+        else if (life < 2)
+        {
+
+        }
+        else if (life < 3)
+        {
+
+        }
+        else if (life < 4)
+        {
+
+        }
+        else if (life < 5)
+        {
+
+        }
+        else if (life < 6)
+        {
+
+        }
+      }
     }
-}
