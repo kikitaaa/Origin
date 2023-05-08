@@ -16,7 +16,6 @@ public class Kai : MonoBehaviour
     public float maxheightofjump;
     private bool onfloor = false;
     public int health;
-    public Slider healthbar;
     public float jumps = 0;
     public static Kai intance;
   //  public int life;
@@ -35,8 +34,6 @@ public class Kai : MonoBehaviour
     {
         ProcessMovement();
         ProcessJump();
-      //  CheckHealth();
-
     }
     private void FixedUpdate()
     {
@@ -85,13 +82,6 @@ public class Kai : MonoBehaviour
     {
         velocity *= amount;
     }
-    //private void CheckHealth()
-    //{
-    //    {
-    //        healthbar.value = health; //Sincronizamos la salud del personaje con la barra de salud.
-    //    }
-
-    //}
     public void Heal(int amount)
     {
         health += amount;
@@ -104,14 +94,23 @@ public class Kai : MonoBehaviour
             Death(); // Si la salud del personaje llega a 0 se invoca el m�todo Death().
         }
     }
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other) 
     {
-        if (other.collider.CompareTag("floor"))
+        if (other.collider.CompareTag("floor")) //Detectamos la colisión del player con el suelo.
         {
-            onfloor= true;
-            jumps = 0;
+            onfloor= true; //Establece el booleano onfloor en true.
+            jumps = 0; //Establece loss saltos a 0.
+        }
+        if (other.collider.CompareTag("bullet")) //Detewctamos la colisión de la bala con el player. 
+        {
+            Bullet bullet = other.gameObject.GetComponent<Bullet>(); // Accedemos al componente Bullet.
+            if (bullet != null) //Comprobamos si bullet es diferente a null.
+            {
+                TakeDamage(bullet.damage); //Invocamos la función Take Damage con el daño asignado en Bullet.
+            }
         }
     }
+
     public void Death()
     { 
 

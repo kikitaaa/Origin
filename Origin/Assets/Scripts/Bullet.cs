@@ -4,74 +4,35 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public float maxTime = 5;
+    public Vector3 direction;
+    public float speed;
+    public int time = 0;
     private float currentTime = 0;
-    private List<string> nombres;
-    public GameObject[] hearts;
-   
+    public int damage;
 
-    private void Start()
-    {
-        // Instantiate(asteroidPrefab, transform.position, Quaternion.identity);
-        nombres = new List<string>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
-        if (currentTime >= maxTime)
-        {
-            for (int i = 1; i <= 1; i += 1)
-            {
-                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-
-
-                {
-                    nombres.Add(bullet.name);
-                }
-
-            }
-
-
-            foreach (string b in nombres)
-            {
-                Debug.Log(b);
-
-            }
-
-
-            currentTime = 0;
-        }
-
-        //if (life > 0)
-        //{
-        //    life--;
-        //}
-        // else if (life < 1)
-        //{
-
-        //}
-        //else if (life < 2)
-        //{
-
-        //}
-        //else if (life < 3)
-        //{
-
-        //}
-        //else if (life < 4)
-        //{
-
-        //}
-        //else if (life < 5)
-        //{
-        //}
-        //else if (life < 6)
-        //{
-
-        //}
-           
-      }
+        BulletPosition();
+        DestroyShoot();
     }
+
+    void BulletPosition()
+    {
+        transform.Translate(direction * speed * Time.deltaTime); //Posicion inicial de donde va a moverse la bala
+    }
+    void DestroyShoot()
+    {
+        currentTime += Time.deltaTime; //Pasado un determinado tiempo se autodestruyen las balas
+        if (currentTime >= time)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+}

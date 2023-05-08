@@ -31,17 +31,13 @@ public class Buttonfunctions : MonoBehaviour
     {
         PauseMenu.SetActive(false);
     }
-    public void ShopMenuoON() //Activa el menú de tienda.
+    public void ShopMenuON() //Activa el menú de tienda.
     {
         Shop.SetActive(true);
-        SceneManager.LoadScene("Shop");
-     
-
     }
-    public void ShopMenuoOFF() //Desactiva el menú de tienda.
+    public void ShopMenuOFF() //Desactiva el menú de tienda.
     {
         Shop.SetActive(false);
-        SceneManager.LoadScene("Level1");
     }
     public void ChangeScene(string name) //Cambiamos a la escena designada, en este caso iria al menu principal y limpiamos la lista de audios.
     {
