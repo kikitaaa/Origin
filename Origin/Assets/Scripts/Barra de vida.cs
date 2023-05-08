@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Barradevida : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Image UIImagen;
+    public void Start()
     {
-        
+        UIImagen = GameObject.Find("Vida").GetComponent<Image>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if(Input.GetKeyDown("q"))
+            {
+            UIImagen.sprite = Resources.Load<Sprite>("Barra de vidas/7");
+            }
+        if (Input.GetKeyDown("w"))
+        {
+            UIImagen.sprite = Resources.Load<Sprite>("Barra de vidas/6");
+        }
     }
 }
