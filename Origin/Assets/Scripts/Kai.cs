@@ -19,7 +19,7 @@ public class Kai : MonoBehaviour
     public Slider healthbar;
     public float jumps = 0;
     public static Kai intance;
-    public int life;
+  //  public int life;
 
     void Awake()
     {
@@ -35,7 +35,7 @@ public class Kai : MonoBehaviour
     {
         ProcessMovement();
         ProcessJump();
-        CheckHealth();
+      //  CheckHealth();
 
     }
     private void FixedUpdate()
@@ -85,13 +85,13 @@ public class Kai : MonoBehaviour
     {
         velocity *= amount;
     }
-    private void CheckHealth()
-    {
-        {
-            healthbar.value = health; //Sincronizamos la salud del personaje con la barra de salud.
-        }
+    //private void CheckHealth()
+    //{
+    //    {
+    //        healthbar.value = health; //Sincronizamos la salud del personaje con la barra de salud.
+    //    }
 
-    }
+    //}
     public void Heal(int amount)
     {
         health += amount;
