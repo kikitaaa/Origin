@@ -29,10 +29,11 @@ public class Melee : MonoBehaviour
             timetonextattack = timetoattack;
             animator.SetBool("isAttacking", true);
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            animator.SetBool("isAttacking", false);
-        }
+
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    animator.SetBool("isAttacking", false);
+        //}
 
     }
     public void Attack()
@@ -43,8 +44,7 @@ public class Melee : MonoBehaviour
             if (collider.CompareTag("Enemy"))
             {
                 collider.transform.GetComponent<Luputon>().TakeDamage(Meleedamage);
-                Debug.Log("golpe");
-                
+                Debug.Log("golpe");  
             }
         }
     }
@@ -52,6 +52,10 @@ public class Melee : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(meleeController.position, meleeRadius);
+    }
+    public void StopAttack()
+    {
+        animator.SetBool("isAttacking", false);
     }
 
   
