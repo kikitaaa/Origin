@@ -7,8 +7,8 @@ public class Buttonfunctions : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject Shop;
-    public GameObject HealthPotion;
-    public GameObject SpeedPotion;
+
+
   
 
     public void PauseTimer() //Pausamos el timer.
@@ -45,10 +45,7 @@ public class Buttonfunctions : MonoBehaviour
 
         AudioManager.instance?.ClearAudioList();
 
-        //if(AudioManager.instance != null)
-        //{
-        //    AudioManager.instance.ClearAudioList();
-        //}
+
     }
     public void ExitGame() //Indicamos a la aplicación que se cierre.
     {
