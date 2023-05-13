@@ -17,8 +17,7 @@ public class Kai : MonoBehaviour
     private bool onfloor = false;
     public int health;
     public float jumps = 0;
-    public static Kai intance;
-  //  public int life;
+
 
     void Awake()
     {

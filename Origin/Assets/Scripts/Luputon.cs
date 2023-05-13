@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Luputon : MonoBehaviour
 {
+    private Animator animator;
     public float health;
 
     void Start()
