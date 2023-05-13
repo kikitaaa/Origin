@@ -605,13 +605,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91767491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8.688114, y: 0.22087288}
+  m_Offset: {x: -6.686598, y: 2.6604242}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -622,7 +622,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.475792, y: 11.749144}
+  m_Size: {x: 9.472759, y: 6.870041}
   m_EdgeRadius: 0
 --- !u!1001 &105461943
 PrefabInstance:
@@ -2957,7 +2957,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.282654, y: -1.1929855}
+  m_Offset: {x: 0.07239914, y: 0.09133506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2968,7 +2968,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.984653, y: 8.576103}
+  m_Size: {x: 22.599373, y: 11.144745}
   m_EdgeRadius: 0
 --- !u!114 &957248213
 MonoBehaviour:
@@ -2995,6 +2995,7 @@ MonoBehaviour:
   range: {fileID: 1617527371}
   hit: {fileID: 91767491}
   health: 100
+  damage: 10
 --- !u!1 &969533514
 GameObject:
   m_ObjectHideFlags: 0

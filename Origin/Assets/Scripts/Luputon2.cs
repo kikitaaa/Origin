@@ -19,6 +19,7 @@ public class Luputon2: MonoBehaviour
     public GameObject hit;
     public float health;
     private Animator animator;
+    public int damage;
 
 
     private void Start()
@@ -123,7 +124,6 @@ public class Luputon2: MonoBehaviour
 
         }
 
-
     }
 
     public void Final_anim()
@@ -145,6 +145,7 @@ public class Luputon2: MonoBehaviour
     {
         Behaviors();
     }
+
     public void TakeDamage(float damage)
     {
         health -= damage;

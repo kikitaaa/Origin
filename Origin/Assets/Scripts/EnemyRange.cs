@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class EnemyRange : MonoBehaviour
 {
-
-
     public Animator anim;
     public Luputon2 enemy;
-
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
