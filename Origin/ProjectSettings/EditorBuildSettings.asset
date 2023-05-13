@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Volume.unity
+    guid: 8a624bd3d5e1a6540b0015fbd0a4aa79
+  - enabled: 1
     path: Assets/Scenes/Glosario_Woodoo.unity
     guid: f640de80ea4ab764b908faa01849a98e
   - enabled: 1
