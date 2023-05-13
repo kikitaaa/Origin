@@ -32,7 +32,7 @@ public class Luputon2: MonoBehaviour
     public void Behaviors()
     {
         if(Mathf.Abs(transform.position.x - target.transform.position.x) > range_vision && !isAttacking)
-        {
+        {   
 
 
             anim.SetBool("isRunning", false);
@@ -70,10 +70,16 @@ public class Luputon2: MonoBehaviour
                     break;
 
             }
-
-
         }
-
+        else if (Mathf.Abs(transform.position.x - target.transform.position.x) <= range_vision && !isAttacking)
+        {
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isAttacking", true);
+            isAttacking = true;
+            range.GetComponent<BoxCollider2D>().enabled = false;
+        }
+      
         else
          {
             if (Mathf.Abs(transform.position.x - target.transform.position.x) > range_attack && !isAttacking)

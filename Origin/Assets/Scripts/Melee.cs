@@ -30,10 +30,7 @@ public class Melee : MonoBehaviour
             animator.SetBool("isAttacking", true);
         }
 
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    animator.SetBool("isAttacking", false);
-        //}
+
 
     }
     public void Attack()
