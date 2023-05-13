@@ -21,6 +21,11 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    public void SetMasterVolume(float volume)
+    {
+        AudioListener.volume = volume;
+    }
+
     //Volume: [0, 1]
     public AudioSource PlayAudio(AudioClip clip,float volume = 1)
     {
@@ -29,7 +34,7 @@ public class AudioManager : MonoBehaviour
         sourceObj.transform.SetParent(this.transform);
         AudioSource source = sourceObj.AddComponent<AudioSource>();
         source.clip = clip;
-        source.volume = volume;
+        source.volume = volume * AudioListener.volume; // Utilizamos el volumen del AudioManager multiplicado por el volumen del AudioListener
         source.Play();
         StartCoroutine(PlayAudio(source));
         return source;
@@ -41,7 +46,7 @@ public class AudioManager : MonoBehaviour
         sourceObj.transform.SetParent(this.transform);
         AudioSource source = sourceObj.AddComponent<AudioSource>();
         source.clip = clip;
-        source.volume = volume;
+        source.volume = volume * AudioListener.volume; // Utilizamos el volumen del AudioManager multiplicado por el volumen del AudioListener
         source.loop = true;
         source.Play();
         return source;

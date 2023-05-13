@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VolumeControl : MonoBehaviour
+public class VolumeController : MonoBehaviour
 {
     public AudioSource audioSource;
     public Slider volumeSlider;
