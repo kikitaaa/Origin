@@ -17,7 +17,9 @@ public class Luputon2: MonoBehaviour
     public float range_attack;
     public GameObject range;
     public GameObject hit;
- 
+    public float health;
+    private Animator animator;
+
 
     private void Start()
     {
@@ -143,4 +145,21 @@ public class Luputon2: MonoBehaviour
     {
         Behaviors();
     }
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Death(); // El personaje ha muerto
+        }
+    }
+    private void Death()
+    {
+      Destroy(gameObject);
+    }
+    public void StopHurt()
+    {
+      animator.SetBool("isHurting", true);
+    }
+    
 }

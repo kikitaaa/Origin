@@ -38,8 +38,9 @@ public class Melee : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.transform.GetComponent<Luputon>().TakeDamage(Meleedamage);
-                animator.Play("Hurt");
+                collider.transform.GetComponent<Luputon2>().TakeDamage(Meleedamage);
+                animator.SetBool("isAttacking", true);
+                //animator.Play("Hurt");
                 Debug.Log("golpe");  
             }
         }
@@ -53,4 +54,5 @@ public class Melee : MonoBehaviour
     {
         animator.SetBool("isAttacking", false);
     }
+
 }
