@@ -39,6 +39,7 @@ public class Kai : MonoBehaviour
         // Usamos un Raycast para lanzar un rayo que detecte el contacto con el suelo.
         Vector2 RayCastOrigin = transform.position - new Vector3(0, GetComponent<Collider2D>().bounds.extents.y, 0);
         Physics2D.Raycast(RayCastOrigin, -Vector2.up, 0.1f);
+      
     }
     private void ProcessMovement() 
     {
@@ -65,15 +66,29 @@ public class Kai : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && (onfloor || jumps > 0 && jumps < 2)) //Si pulsamos la tecla designada al "Jump", "onfloor" es true y el n�mero de saltos es menor que 2 el jugador podr� saltar.
         {
+            animator.SetBool("isJumping", true);
             jumps++;
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
             onfloor = false;
+            StartCoroutine(ResetJumpAnimation());
+
             //  AudioManager.instance.PlayAudio(jumpclip, 1);
+
         }
+    }
+    IEnumerator ResetJumpAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("isJumping", false);
     }
     public void Healing(int healvalue)
     {
         Heal(health + healvalue <= 100 ? healvalue : 100 - health);
+
+    }
+    public void DamageLimit(int damage)
+    {
+        TakeDamage(health + damage <= 0 ? damage : 0 - health);
 
     }
 
@@ -111,7 +126,7 @@ public class Kai : MonoBehaviour
     }
 
     public void Death()
-    { 
-
+    {
+        SceneManager.LoadScene("Level1");
     }
 }
