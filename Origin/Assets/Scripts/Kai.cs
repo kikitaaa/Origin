@@ -18,7 +18,6 @@ public class Kai : MonoBehaviour
     public int health;
     public float jumps = 0;
 
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,6 +46,7 @@ public class Kai : MonoBehaviour
         //Debug.Log(movhor);
         animator.SetBool("isWalking", movhor != 0);
         rb.velocity = new Vector2(movhor * velocity, rb.velocity.y);
+        
 
        
 
@@ -114,6 +114,7 @@ public class Kai : MonoBehaviour
         {
             onfloor= true; //Establece el booleano onfloor en true.
             jumps = 0; //Establece loss saltos a 0.
+            
         }
         if (other.collider.CompareTag("bullet")) //Detewctamos la colisión de la bala con el player. 
         {
