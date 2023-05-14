@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class healthbar : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
-    public Image UIImagen;
+    private Image UIImagen;
     public GameObject Player;
-    public void Start()
+    private void Start()
     {
-        UIImagen = GameObject.Find("healthbar").GetComponent<Image>();
+        UIImagen = GetComponentInChildren<Image>();
+        //UIImagen = GameObject.Find("healthbar").GetComponent<Image>();
     }
     public void Update()
     {
-        UIImagen.sprite = Resources.Load<Sprite>("healthbar/" + Player.GetComponent<Kai>().health.ToString());
+        UIImagen.sprite = Resources.Load<Sprite>("Healthbar/" + Player.GetComponent<Kai>().health.ToString());
     }
 }

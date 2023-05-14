@@ -1244,7 +1244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214fdb4e92059ea479fee52878b33225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIImagen: {fileID: 628167687}
   Player: {fileID: 1731811817}
 --- !u!1 &500830379
 GameObject:
@@ -5907,6 +5906,18 @@ PrefabInstance:
     - target: {fileID: 8553050246737869876, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553050246737869878, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553050248225180842, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: m_Size.x
+      value: 9.40477
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553050248225180842, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: m_Offset.x
+      value: -8.007702
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
