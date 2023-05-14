@@ -86,6 +86,11 @@ public class Kai : MonoBehaviour
         Heal(health + healvalue <= 100 ? healvalue : 100 - health);
 
     }
+    public void DamageLimit(int damage)
+    {
+        TakeDamage(health + damage <= 0 ? damage : 0 - health);
+
+    }
 
     public void SpeedMult(int amount)
     {
@@ -121,7 +126,7 @@ public class Kai : MonoBehaviour
     }
 
     public void Death()
-    { 
-
+    {
+        SceneManager.LoadScene("Level1");
     }
 }
