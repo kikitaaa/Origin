@@ -24,9 +24,10 @@ public class Luputon2: MonoBehaviour
    
     public int damage;
 
-
+    private SpriteRenderer spriteRenderer;
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         target = GameObject.Find("Kai");
         if (target == null)
@@ -154,15 +155,18 @@ public class Luputon2: MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            anim.SetFloat("isHurting", 1f);
-
-            Death(); // El personaje ha muerto
+            anim.SetBool("isHurting", true); // Activar animación de daño
+            StartCoroutine(DelayedDeath(1.5f));
         }
     }
-   
+    private System.Collections.IEnumerator DelayedDeath(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Death();
+    }
     public void StopHurt()
     {
-      anim.SetBool("isHurting", false);
+        anim.SetBool("isHurting", false);
     }
      private void Death()
     {
