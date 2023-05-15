@@ -7,9 +7,7 @@ public class Buttonfunctions : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject Shop;
-
-
-  
+    public AudioClip clip;
 
     public void PauseTimer() //Pausamos el timer.
     {
@@ -44,7 +42,6 @@ public class Buttonfunctions : MonoBehaviour
         SceneManager.LoadScene(name);
         AudioManager.instance.ClearAudioList();
 
-
     }
     public void ExitGame() //Indicamos a la aplicación que se cierre.
     {
@@ -57,6 +54,6 @@ public class Buttonfunctions : MonoBehaviour
     }
     public void StartBackgroundMusic()
     {
-
+        AudioManager.instance.PlayBackgroundMusic(clip,1);
     }
 }
