@@ -133,5 +133,6 @@ public class Kai : MonoBehaviour
     public void Death()
     {
         SceneManager.LoadScene("Level1");
+        AudioManager.instance.ClearAudioList();
     }
 }
