@@ -1457,7 +1457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214fdb4e92059ea479fee52878b33225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
 --- !u!1 &470180495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +1996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214fdb4e92059ea479fee52878b33225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1731811817}
 --- !u!1 &637125751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5589,6 +5587,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1788122912 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8553050246737869879, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+  m_PrefabInstance: {fileID: 8553050246621351652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1797251211
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,9 +7103,25 @@ PrefabInstance:
       value: Luputon
       objectReference: {fileID: 0}
     - target: {fileID: 8553050246737869873, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1788122912}
+    - target: {fileID: 8553050246737869873, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: timer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553050246737869873, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: rutine
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553050246737869873, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1731811817}
+    - target: {fileID: 8553050246737869873, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8553050246737869876, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7171,5 +7190,6 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -8.007702
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8553050246737869878, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
