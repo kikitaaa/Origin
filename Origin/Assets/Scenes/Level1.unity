@@ -2659,7 +2659,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916316202
 GameObject:
@@ -3022,7 +3022,7 @@ Transform:
   - {fileID: 195132099}
   - {fileID: 1076594405}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039293666
 GameObject:
@@ -4429,7 +4429,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1728091196
 GameObject:
@@ -4551,6 +4551,8 @@ MonoBehaviour:
   maxheightofjump: 10
   health: 100
   jumps: 0
+  jumpSound: {fileID: 8300000, guid: 8785ad99db1256e4ebb514adffd3eab6, type: 3}
+  jumpVolume: 0.367
 --- !u!50 &1731811820
 Rigidbody2D:
   serializedVersion: 4
@@ -4632,8 +4634,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731811817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.52, y: 1.96, z: 5.6}
-  m_LocalScale: {x: 0.99725586, y: 0.99725586, z: 0}
+  m_LocalPosition: {x: 3.09, y: -1.22, z: 5.6}
+  m_LocalScale: {x: 0.5660424, y: 0.5660424, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1039293667}
@@ -4658,6 +4660,8 @@ MonoBehaviour:
   Meleedamage: 35
   timetoattack: 1
   timetonextattack: 0
+  attackSound: {fileID: 8300000, guid: 24a269b04e597c24d9a70cff1d4b67a3, type: 3}
+  attackVolume: 0.622
 --- !u!95 &1731811824
 Animator:
   serializedVersion: 4
@@ -5197,7 +5201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.9197998, y: 1.1138}
+  m_AnchoredPosition: {x: -0.9197998, y: 1.1137695}
   m_SizeDelta: {x: 9.8579, y: 2.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1834515630
@@ -5335,8 +5339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861252822090d784891123e2d00424ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8119108843854188824, guid: b8d9927ebcfe51a4d850de92fa028b8b, type: 3}
   maxTime: 5
+  canyonSound: {fileID: 8300000, guid: 7a49061af16f9264f8a3af19c58204a7, type: 3}
+  canyonVolume: 0.494
 --- !u!1 &1924851438
 GameObject:
   m_ObjectHideFlags: 0
@@ -5888,7 +5894,7 @@ PrefabInstance:
       objectReference: {fileID: 1504746220}
     - target: {fileID: 184158962194416103, guid: 30df218d194f0804faf671f62d059498, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 184158962194416103, guid: 30df218d194f0804faf671f62d059498, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5998,7 +6004,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4554642354282636449, guid: 633df10047b76df409206547f270c47b, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4554642354282636449, guid: 633df10047b76df409206547f270c47b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6053,6 +6059,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8553050246531681313, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: damageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c91ee035c1508647a4388fb4644a814, type: 3}
+    - target: {fileID: 8553050246531681313, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
+      propertyPath: damageVolume
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 8553050246737869864, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
       propertyPath: m_Name
       value: Luputon
@@ -6063,7 +6077,7 @@ PrefabInstance:
       objectReference: {fileID: 1731811817}
     - target: {fileID: 8553050246737869876, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8553050246737869876, guid: 4630ed8fcd09fbc4ab53147428b5705c, type: 3}
       propertyPath: m_LocalPosition.x

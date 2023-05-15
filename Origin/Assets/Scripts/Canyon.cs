@@ -8,7 +8,10 @@ public class Canyon : MonoBehaviour
     public float maxTime = 5;
     private float currentTime = 0;
     private List<string> nombres;
-   
+    public AudioClip canyonSound;
+    [Range(0, 1)]
+    public float canyonVolume;
+
 
     private void Start()
     {
@@ -25,6 +28,7 @@ public class Canyon : MonoBehaviour
             for (int i = 1; i <= 1; i += 1)
             {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                AudioManager.instance.PlayAudio(canyonSound, canyonVolume);
 
 
                 {

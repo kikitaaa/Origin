@@ -10,6 +10,9 @@ public class Melee : MonoBehaviour
     public float timetoattack;
     public float timetonextattack;
     private Animator animator;
+    public AudioClip attackSound;
+    [Range(0, 1)]
+    public float attackVolume;
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class Melee : MonoBehaviour
             Attack();
             timetonextattack = timetoattack;
             animator.SetBool("isAttacking", true);
+            AudioManager.instance.PlayAudio(attackSound, attackVolume);
         }
 
     }

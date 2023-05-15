@@ -17,6 +17,9 @@ public class Kai : MonoBehaviour
     private bool onfloor = false;
     public int health;
     public float jumps = 0;
+    public AudioClip jumpSound;
+    [Range(0, 1)]
+    public float jumpVolume;
 
     void Awake()
     {
@@ -71,6 +74,7 @@ public class Kai : MonoBehaviour
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
             onfloor = false;
             StartCoroutine(ResetJumpAnimation());
+            AudioManager.instance.PlayAudio(jumpSound, jumpVolume);
 
             //  AudioManager.instance.PlayAudio(jumpclip, 1);
 

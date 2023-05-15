@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class HitEnemy : MonoBehaviour
 {
+    public AudioClip damageSound;
+    [Range(0, 1)]
+    public float damageVolume;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -13,6 +16,7 @@ public class HitEnemy : MonoBehaviour
             {
                 player.TakeDamage(10); // O la cantidad de daño que desees
                 Debug.Log("-10 de salud");
+                AudioManager.instance.PlayAudio(damageSound, damageVolume);
             }
         }
     }

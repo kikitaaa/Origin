@@ -9,6 +9,9 @@ public class Bullet : MonoBehaviour
     public int time = 0;
     private float currentTime = 0;
     public int damage;
+    public AudioClip damageSound;
+    [Range(0, 1)]
+    public float damageVolume;
 
     void Update()
     {
@@ -33,6 +36,20 @@ public class Bullet : MonoBehaviour
         if (other.collider.CompareTag("Player"))
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Kai player = collision.gameObject.GetComponent<Kai>();
+            if (player != null)
+            {
+                player.TakeDamage(10); // O la cantidad de daño que desees
+                Debug.Log("-5 de salud");
+                AudioManager.instance.PlayAudio(damageSound, damageVolume);
+            }
         }
     }
 }
