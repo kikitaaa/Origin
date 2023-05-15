@@ -28,11 +28,11 @@ public class Canyon : MonoBehaviour
             for (int i = 1; i <= 1; i += 1)
             {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                AudioManager.instance.PlayAudio(canyonSound, canyonVolume);
 
 
                 {
                     nombres.Add(bullet.name);
+                    AudioManager.instance.PlayAudio(canyonSound, canyonVolume);
                 }
 
             }

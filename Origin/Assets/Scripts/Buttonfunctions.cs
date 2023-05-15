@@ -42,7 +42,6 @@ public class Buttonfunctions : MonoBehaviour
     public void ChangeScene(string name) //Cambiamos a la escena designada, en este caso iria al menu principal y limpiamos la lista de audios.
     {
         SceneManager.LoadScene(name);
-
         AudioManager.instance.ClearAudioList();
 
 
@@ -52,8 +51,12 @@ public class Buttonfunctions : MonoBehaviour
         Application.Quit();
     }
    
-    public void ClearListAudio()
+    public void StopBackgroundMusic()
     {
-        AudioManager.instance.ClearAudioList();
+        AudioManager.instance.StopBackgroundMusic();
+    }
+    public void StartBackgroundMusic()
+    {
+
     }
 }

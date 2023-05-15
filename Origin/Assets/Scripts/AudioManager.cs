@@ -91,4 +91,12 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
         activeAudioSources.Add(musicSource);
     }
+    public void StopBackgroundMusic()
+    {
+        if (musicSource != null)
+        {
+            musicSource.Stop();
+            activeAudioSources.Remove(musicSource);
+        }
+    }
 }
