@@ -103,7 +103,7 @@ MonoBehaviour:
   time: 5
   damage: 5
   damageSound: {fileID: 8300000, guid: 0c91ee035c1508647a4388fb4644a814, type: 3}
-  damageVolume: 1
+  damageVolume: 0.42
 --- !u!61 &8119108843854188831
 BoxCollider2D:
   m_ObjectHideFlags: 0

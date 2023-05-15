@@ -9,6 +9,6 @@ public class UpdateTimer : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime; //Realizamos el contador de tiempo con el time delta time para que detecte el tiempo adecuadamente.
-        timeText.text = "TIME:" + time.ToString("F2"); // invocamos el time en texto y designamos que solo use dos decimales.
+        timeText.text = ":" + time.ToString("F2"); // invocamos el time en texto y designamos que solo use dos decimales.
     }
 }

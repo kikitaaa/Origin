@@ -43,7 +43,7 @@ public class Shop : MonoBehaviour
     }
     public void UpdateCoinsText() //Actualizamos el texto de coins y lo mostramos.
     {
-        textcoinsText.text = "Coins: " + coins.ToString();
+        textcoinsText.text = ": " + coins.ToString();
     }
 
     public void AddCoins(int amount) // Agregamos coins segun la cantidad asignada.

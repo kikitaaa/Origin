@@ -12,6 +12,9 @@ public class Dialogue : MonoBehaviour
     private bool isPlayerInRange;
     private bool didDialogueStart; //va a indicar si el dialogo ha comenzado
     private int lineIndex; //nos va a indicar que linea de dialogo esta mostrando
+    public AudioClip deeSound;
+    [Range(0, 1)]
+    public float deeVolume;
 
     private float typingTime = 0.05f;
    
@@ -64,6 +67,8 @@ public class Dialogue : MonoBehaviour
             didDialogueStart = false;
             DialoguePanel.SetActive(false);
             DialogueMark.SetActive(true);
+            
+
             Time.timeScale = 1f;
         }
     }
@@ -98,7 +103,8 @@ public class Dialogue : MonoBehaviour
         {
             isPlayerInRange = true;
             DialogueMark.SetActive(true);
-            
+            AudioManager.instance.PlayAudio(deeSound, deeVolume);
+
         }
        
     }
