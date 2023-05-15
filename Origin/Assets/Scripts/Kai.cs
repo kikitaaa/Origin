@@ -11,15 +11,19 @@ public class Kai : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer rend;
     private Animator animator;
+
     public float velocity = 10f;
     public float jumpforce;
     public float maxheightofjump;
+
     private bool onfloor = false;
     public int health;
     public float jumps = 0;
     public AudioClip jumpSound;
     [Range(0, 1)]
     public float jumpVolume;
+
+    private bool isCrouch = false;
 
     void Awake()
     {
@@ -43,20 +47,20 @@ public class Kai : MonoBehaviour
         Physics2D.Raycast(RayCastOrigin, -Vector2.up, 0.1f);
       
     }
-    private void ProcessMovement() 
+    private void ProcessMovement()
     {
         float movhor = Input.GetAxisRaw("Horizontal"); //Si pulsamos los botones designados al Axis Horizontal, se inicia el movimiento del personaje.
         //Debug.Log(movhor);
         animator.SetBool("isWalking", movhor != 0);
         rb.velocity = new Vector2(movhor * velocity, rb.velocity.y);
-        
 
-       
+
+
 
         if (movhor > 0)
         {
             rend.flipX = false;
-          
+
         }
 
         else if (movhor < 0)
@@ -64,6 +68,22 @@ public class Kai : MonoBehaviour
             rend.flipX = true; //si el movhor es mayor que 0 el personaje gira.
         }
 
+        // Detecta si se presiona la tecla Shift
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            // Alterna el estado de crouch
+            isCrouch = !isCrouch;
+
+            // Activa la animación correspondiente
+            animator.SetBool("isCrouch", true);
+             
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isCrouch = isCrouch;
+            animator.SetBool("isCrouch", false);
+        }
+        
     }
     private void ProcessJump()
     {
