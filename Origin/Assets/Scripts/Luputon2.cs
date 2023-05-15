@@ -12,13 +12,16 @@ public class Luputon2: MonoBehaviour
     public float speed_run;
     public GameObject target;
     public bool isAttacking;
+    private bool isDead;
+    private bool isRunning;
+    private float isHurting;
 
     public float range_vision;
     public float range_attack;
     public GameObject range;
     public GameObject hit;
     public float health;
-    private Animator animator;
+   
     public int damage;
 
 
@@ -151,16 +154,20 @@ public class Luputon2: MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            anim.SetFloat("isHurting", 1f);
+
             Death(); // El personaje ha muerto
         }
     }
-    private void Death()
-    {
-      Destroy(gameObject);
-    }
+   
     public void StopHurt()
     {
-      animator.SetBool("isHurting", true);
+      anim.SetBool("isHurting", false);
     }
-    
+     private void Death()
+    {
+        anim.SetBool("isDead", true);
+        Destroy(gameObject);
+        
+    }
 }

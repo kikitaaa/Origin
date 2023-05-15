@@ -36,6 +36,7 @@ public class Bullet : MonoBehaviour
         if (other.collider.CompareTag("Player"))
         {
             Destroy(gameObject);
+            Debug.Log("Choque con player");
         }
     }
 
@@ -49,6 +50,8 @@ public class Bullet : MonoBehaviour
                 player.TakeDamage(10); // O la cantidad de daño que desees
                 Debug.Log("-5 de salud");
                 AudioManager.instance.PlayAudio(damageSound, damageVolume);
+                Destroy(gameObject);
+                Debug.Log("Choque con player");
             }
         }
     }
