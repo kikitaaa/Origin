@@ -110,6 +110,8 @@ public class Kai : MonoBehaviour
         if (health <= 0)
         {
             Death(); // Si la salud del personaje llega a 0 se invoca el m�todo Death().
+
+            animator.SetBool("isDead",true);
         }
     }
     void OnCollisionEnter2D(Collision2D other) 
@@ -133,5 +135,6 @@ public class Kai : MonoBehaviour
     public void Death()
     {
         SceneManager.LoadScene("Level1");
+        AudioManager.instance.ClearAudioList();
     }
 }
