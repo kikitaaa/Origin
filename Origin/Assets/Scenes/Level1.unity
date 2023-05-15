@@ -3692,7 +3692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ambientMusic: {fileID: 8300000, guid: 46b886b4e6fd09047a32815c08362165, type: 3}
-  musicVolume: 1
+  musicVolume: 0.068
 --- !u!1 &541154182
 GameObject:
   m_ObjectHideFlags: 0
