@@ -52,5 +52,8 @@ public class Buttonfunctions : MonoBehaviour
         Application.Quit();
     }
    
-
+    public void ClearListAudio()
+    {
+        AudioManager.instance.ClearAudioList();
+    }
 }
