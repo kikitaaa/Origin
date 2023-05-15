@@ -25,12 +25,12 @@ public class Pingu : MonoBehaviour
         if (isRight == true)
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
-            
+
         }
         if (isRight == false)
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
-         
+
         }
 
         //timer para que se de la vuelta
@@ -43,11 +43,17 @@ public class Pingu : MonoBehaviour
 
 
     }
-    public void TakeDamage(float damage)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        health -= damage;
-        if (health <= 0) ;
-       
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Kai player = collision.gameObject.GetComponent<Kai>();
+            if (player != null)
+            {
+                player.TakeDamage(10); // O la cantidad de daño que desees
+                Debug.Log("-10 de salud");
+            }
+        }
     }
 
 }
