@@ -43,7 +43,7 @@ public class Buttonfunctions : MonoBehaviour
     {
         SceneManager.LoadScene(name);
 
-        AudioManager.instance?.ClearAudioList();
+        AudioManager.instance.ClearAudioList();
 
 
     }
@@ -52,5 +52,8 @@ public class Buttonfunctions : MonoBehaviour
         Application.Quit();
     }
    
-
+    public void ClearListAudio()
+    {
+        AudioManager.instance.ClearAudioList();
+    }
 }

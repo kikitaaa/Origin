@@ -40,14 +40,5 @@ public class Pingu : MonoBehaviour
             timer = timeForChange;
             isRight = !isRight;
         }
-
-
     }
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-        if (health <= 0) ;
-       
-    }
-
 }
