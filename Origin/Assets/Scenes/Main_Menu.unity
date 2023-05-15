@@ -1500,6 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &1607340148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,6 +2164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &2002596493
 GameObject:
   m_ObjectHideFlags: 0
