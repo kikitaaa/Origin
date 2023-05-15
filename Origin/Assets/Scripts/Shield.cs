@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BubbleShield : MonoBehaviour
+public class Shield : MonoBehaviour
 {
     public float shieldDuration = 5f; // Duración del escudo en segundos
     public float shieldStrength = 1f; // Fuerza del escudo (0-1)

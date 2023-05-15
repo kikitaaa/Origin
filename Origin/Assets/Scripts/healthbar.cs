@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         UIImagen = GetComponentInChildren<Image>();
-        //UIImagen = GameObject.Find("healthbar").GetComponent<Image>();
+
     }
     public void Update()
     {
