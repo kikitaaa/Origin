@@ -121,7 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinValue: 10
-  shop: {fileID: 0}
+  coins: {fileID: 0}
+  coinSound: {fileID: 8300000, guid: 9dc7e9424d5599b41aea3439551a9e8a, type: 3}
+  coinVolume: 0.103
 --- !u!58 &1543805805727480120
 CircleCollider2D:
   m_ObjectHideFlags: 0
