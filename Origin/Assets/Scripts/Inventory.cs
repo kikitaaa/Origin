@@ -28,6 +28,8 @@ public class Inventory : MonoBehaviour
             if (InventoryObjects.Exists(h => h is HealthPotion))  // Si existe al menos una poción de salud en el inventario
             {
                 UseHealthPotion(kaiObject); // Usamos una poción de salud
+                Shop.instance.RemovePotionHealth();
+                Shop.instance.UpdateHealthPotionText();               
                 Debug.Log("Pocion de salud consumida.");
             }
             else
@@ -41,6 +43,8 @@ public class Inventory : MonoBehaviour
             if (InventoryObjects.Exists(s => s is SpeedPotion)) // Si existe al menos una poción de velocidad en el inventario
             {
                 UseSpeedPotion(kaiObject); // Usamos una poción de velocidad
+                Shop.instance.RemovePotionSpeed();
+                Shop.instance.UpdateSpeedPotionText();
                 Debug.Log("Pocion de velocidad consumida.");
             }
             else
