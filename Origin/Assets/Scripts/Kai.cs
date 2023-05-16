@@ -80,7 +80,7 @@ public class Kai : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            isCrouch = isCrouch;
+            
             animator.SetBool("isCrouch", false);
         }
         
