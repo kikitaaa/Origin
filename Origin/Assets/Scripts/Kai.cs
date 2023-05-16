@@ -151,7 +151,10 @@ public class Kai : MonoBehaviour
             }
         }
     }
-
+    //public void Speedpotioneliminate()
+    //{
+    //    Shop.instance.RemovePotionSpeed();
+    //}
     public void Death()
     {
         animator.SetBool("isDead", true);

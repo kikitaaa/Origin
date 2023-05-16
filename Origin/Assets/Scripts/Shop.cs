@@ -8,16 +8,24 @@ public class Shop : MonoBehaviour
     public Inventory inventory; // Invocamos al Inventario.
     public int coins = 0; // Valor inicial de la moneda
     public TMPro.TMP_Text textcoinsText; // Referencia al objeto Text en el canvas
-    public TMPro.TMP_Text texhealthpotionsText;
     public TMPro.TMP_Text textspeedpotionsText;
-    public int healthpotions = 0;
+    public TMPro.TMP_Text texhealthpotionsText;
     public int speedpotions = 0;
+    public int healthpotions = 0;
 
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         UpdateCoinsText(); // Llamamos al método UpdateCoinsText.
-        UpdateHealthPotionText();
         UpdateSpeedPotionText();
+        UpdateHealthPotionText();
     }
     public void BuyHealthPotion()
     {
@@ -25,10 +33,11 @@ public class Shop : MonoBehaviour
         {
             inventory.InventoryObjects.Add(new HealthPotion("HealthPotion", 1, 10)); // Sihay dinero suficiente, se agrega una poción al inventario.
             coins -= 10; // Resta el valor de la poción de las monedas
-            healthpotions += 1;
+            //healthpotions += 1;
             Debug.Log("Poción de curación comprada.");
+            AddHPotion();
             UpdateCoinsText();
-            UpdateHealthPotionText();
+
         }
         else
         {
@@ -41,10 +50,10 @@ public class Shop : MonoBehaviour
         {
             inventory.InventoryObjects.Add(new SpeedPotion("SpeedPotion", 1, 2));
             coins -= 2; // Resta el valor de la poción de las monedas
-            speedpotions += 1;
+            
             Debug.Log("Poción de velocidad comprada.");
+            AddSpPotion();
             UpdateCoinsText();
-            UpdateSpeedPotionText();
         }
         else
         {
@@ -55,13 +64,24 @@ public class Shop : MonoBehaviour
     {
         textcoinsText.text = ": " + coins.ToString();
     }
-    public void UpdateHealthPotionText() 
-    {
-        texhealthpotionsText.text = ": " + healthpotions.ToString();
-    }
+
     public void UpdateSpeedPotionText()
     {
-       textspeedpotionsText.text= ": " + speedpotions.ToString();
+       textspeedpotionsText.text = speedpotions.ToString();
+    }
+    public void UpdateHealthPotionText()
+    {
+       texhealthpotionsText.text = healthpotions.ToString();
+    }
+    public void AddSpPotion()
+    {
+        speedpotions += 1;
+        UpdateSpeedPotionText();
+    }
+    public void AddHPotion()
+    {
+        healthpotions += 1;
+        UpdateHealthPotionText();
     }
 
     public void AddCoins(int amount) // Agregamos coins segun la cantidad asignada.
@@ -70,11 +90,11 @@ public class Shop : MonoBehaviour
     }
     public void RemovePotionHealth()
     {
-        if (healthpotions > 0) // Verifica si hay pociones de salud disponibles
+       if (healthpotions > 0) // Verifica si hay pociones de salud disponibles
         {
-            healthpotions -= 1;
-            Debug.Log("Poción de curación consumida.");
-            UpdateHealthPotionText();
+           healthpotions -= 1;
+           Debug.Log("Poción de curación consumida.");
+           UpdateHealthPotionText();
         }
         else
         {
@@ -87,7 +107,7 @@ public class Shop : MonoBehaviour
         if (speedpotions > 0) // Verifica si hay pociones de velocidad disponibles
         {
             speedpotions -= 1;
-            Debug.Log("Poción de velocidad consumida.");
+            Debug.Log("Poción de velocidad eliminada del inventario.");
             UpdateSpeedPotionText();
         }
         else

@@ -27,7 +27,7 @@ public class MenuMovement : MonoBehaviour
         this.GetComponent<RectTransform>().position = Vector2.Lerp(GetComponent<RectTransform>().position, new Vector2(mousePosX, mousePosY),Time.deltaTime*0.3f) ;
 
         //this.GetComponent<RectTransform>().LookAt(Input.mousePosition);
-        Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        //Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
     }
 }
