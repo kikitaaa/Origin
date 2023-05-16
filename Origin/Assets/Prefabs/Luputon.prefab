@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80236ed89b24e454da8ff6e34bf8e670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSound: {fileID: 0}
+  damageVolume: 0
 --- !u!1 &8553050246694995047
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +115,6 @@ GameObject:
   - component: {fileID: 8553050246737869876}
   - component: {fileID: 8553050246737869867}
   - component: {fileID: 8553050246737869873}
-  - component: {fileID: 8553050246737869878}
   - component: {fileID: 8553050246737869866}
   - component: {fileID: 8553050246737869879}
   - component: {fileID: 8553050246737869872}
@@ -220,21 +221,6 @@ MonoBehaviour:
   hit: {fileID: 8553050246531681319}
   health: 100
   damage: 10
---- !u!114 &8553050246737869878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8553050246737869864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7402eb0f88ab114fb3c3e760c260504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MeleeController: {fileID: 8553050246694995040}
-  MeleeRadius: 0.4
-  Meleedamage: 20
 --- !u!50 &8553050246737869866
 Rigidbody2D:
   serializedVersion: 4
