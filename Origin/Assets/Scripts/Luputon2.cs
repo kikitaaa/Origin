@@ -14,7 +14,7 @@ public class Luputon2: MonoBehaviour
     public bool isAttacking;
     private bool isDead;
     private bool isRunning;
-    private float isHurting;
+    private bool isHurting;
 
     public float range_vision;
     public float range_attack;

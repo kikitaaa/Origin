@@ -13,6 +13,9 @@ public class Melee : MonoBehaviour
     public AudioClip attackSound;
     [Range(0, 1)]
     public float attackVolume;
+    public AudioClip luputonSound;
+    [Range(0, 1)]
+    public float luputonVolume;
 
     void Start()
     {
@@ -45,7 +48,9 @@ public class Melee : MonoBehaviour
                 collider.transform.GetComponent<Luputon2>().TakeDamage(Meleedamage);
                 animator.SetBool("isAttacking", true);
                 //animator.Play("Hurt");
-                Debug.Log("golpe");  
+                Debug.Log("golpe");
+                AudioManager.instance.PlayAudio(luputonSound, luputonVolume);
+
             }
         }
     }
