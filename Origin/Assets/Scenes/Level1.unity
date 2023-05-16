@@ -6724,7 +6724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0828578115b9def4d9834b5a24b4575f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1731811817}
+  playerTransform: {fileID: 1731811822}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17660,6 +17660,10 @@ MonoBehaviour:
   inventory: {fileID: 1559818415}
   coins: 100
   textcoinsText: {fileID: 1552129292}
+  texhealthpotionsText: {fileID: 0}
+  textspeedpotionsText: {fileID: 0}
+  healthpotions: 0
+  speedpotions: 0
 --- !u!114 &1552129292
 MonoBehaviour:
   m_ObjectHideFlags: 0

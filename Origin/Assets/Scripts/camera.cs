@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
-    public GameObject player;
+    public Transform playerTransform;
+
     private Vector3 playerposition;
-    // Start is called before the first frame update
+
     void Start()
     {
-        playerposition = transform.position - player.transform.position;
+        playerposition = transform.position - playerTransform.position;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        transform.position = player.transform.position + playerposition;
+        transform.position = new Vector3(playerTransform.position.x + playerposition.x, transform.position.y, transform.position.z); //sigue a Kai solo en el eje x
     }
 }
