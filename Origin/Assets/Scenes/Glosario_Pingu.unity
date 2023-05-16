@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &409100975
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a675dfab95dab9c41b8a80ddba9468b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeAudioGameObjects: []
+  activeAudioSources: []
+  musicSource: {fileID: 0}
 --- !u!4 &1269324351
 Transform:
   m_ObjectHideFlags: 0
@@ -971,7 +973,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Glosario
+          m_StringArgument: Glosario_Dee
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1374928818
@@ -1026,6 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &1454023554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &1598508158
 GameObject:
   m_ObjectHideFlags: 0
