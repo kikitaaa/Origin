@@ -6,6 +6,8 @@ public class Inventory : MonoBehaviour
 {
     public List<Potion> InventoryObjects = new List<Potion>();  // Creamos una lista pública de objetos "Potion" llamada "InventoryObjects" y la inicializamos como una lista vacía.
     public static Inventory instance;
+    public PotionsHText potionsHtext;
+    public Shop shop;
      
 
     private void Awake()
@@ -28,7 +30,7 @@ public class Inventory : MonoBehaviour
             if (InventoryObjects.Exists(h => h is HealthPotion))  // Si existe al menos una poción de salud en el inventario
             {
                 UseHealthPotion(kaiObject); // Usamos una poción de salud
-                Shop.instance.RemovePotionHealth();              
+                PotionsHText.instance.UpdateHealthPotionText();
                 Debug.Log("Pocion de salud consumida.");
             }
             else
@@ -42,8 +44,7 @@ public class Inventory : MonoBehaviour
             if (InventoryObjects.Exists(s => s is SpeedPotion)) // Si existe al menos una poción de velocidad en el inventario
             {
                 UseSpeedPotion(kaiObject); // Usamos una poción de velocidad
-                Shop.instance.RemovePotionSpeed();
-                Debug.Log("Pocion de velocidad consumida.");
+                Debug.Log("Pocion de velocidad consumida :).");
             }
             else
             {
@@ -62,6 +63,7 @@ public class Inventory : MonoBehaviour
                 HealthPotion healthPotion = (HealthPotion)potion;  // Convertimos la poción a un objeto "HealthPotion"
                 // Usamos la poción de salud encontrada
                 healthPotion.UsePotion(player);
+                QuitHealthPotion();
                 Debug.Log("Healing");
                 // Agregamos la poción de salud encontrada a la lista "potionsToRemove"
                 potionsToRemove.Add(healthPotion);
@@ -84,6 +86,7 @@ public class Inventory : MonoBehaviour
                 SpeedPotion speedPotion = (SpeedPotion)potion;  // Convertimos la poción a un objeto "SpeedPotion"
                 //Usar la speedPotion encontrada
                 speedPotion.UsePotion(player);
+                QuitSpeedPotion();
                 Debug.Log("Boosting Speed");
                 // Agregamos la poción de velocidad encontrada a la lista "potionsToRemove"
                 potionsToRemove.Add(speedPotion);
@@ -95,5 +98,13 @@ public class Inventory : MonoBehaviour
             InventoryObjects.Remove(potionToRemove);
         }
        
+    }
+    public void QuitSpeedPotion()
+    {
+        Shop.instance.RemovePotionSpeed();
+    }
+    public void QuitHealthPotion()
+    {
+        Shop.instance.RemovePotionHealth();
     }
 }

@@ -157,6 +157,10 @@ public class Kai : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    //public void Speedpotioneliminate()
+    //{
+    //    Shop.instance.RemovePotionSpeed();
+    //}
     public void Death()
     {
         animator.Play("Dead");
