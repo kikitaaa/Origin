@@ -54,6 +54,7 @@ public class Buttonfunctions : MonoBehaviour
     }
     public void StartBackgroundMusic()
     {
-        AudioManager.instance.PlayBackgroundMusic(clip,1);
+        AudioManager.instance.PlayBackgroundMusic(clip);
     }
+        
 }
