@@ -7,6 +7,7 @@ public class HitEnemy : MonoBehaviour
     public AudioClip damageSound;
     [Range(0, 1)]
     public float damageVolume;
+    
 
     private bool isWithinShield = false;
 
@@ -14,6 +15,8 @@ public class HitEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            
+        
             Kai player = collision.gameObject.GetComponent<Kai>();
             if (player != null)
             {
@@ -22,6 +25,7 @@ public class HitEnemy : MonoBehaviour
                     player.TakeDamage(10); // O la cantidad de daño que desees
                     Debug.Log("-10 de salud");
                     AudioManager.instance.PlayAudio(damageSound, damageVolume);
+                    
                 }
             }
         }
