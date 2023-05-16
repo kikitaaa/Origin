@@ -513,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &773554655
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +608,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Glosario_Dee
+          m_StringArgument: Glosario_Pingu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &773554658
@@ -662,6 +663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &832272779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
   Shop: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &1625498578
 GameObject:
   m_ObjectHideFlags: 0
