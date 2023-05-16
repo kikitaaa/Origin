@@ -152,10 +152,17 @@ public class Kai : MonoBehaviour
         }
     }
 
+    public void AnimChangeScene()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
     public void Death()
     {
-        animator.SetBool("isDead", true);
-        SceneManager.LoadScene("Level1");
-        AudioManager.instance.ClearAudioList();
+        animator.Play("Dead");
+
+        ///(animator.SetBool("isDead", true);
+        //SceneManager.LoadScene("Level1");
+        //AudioManager.instance.ClearAudioList();
     }
 }
