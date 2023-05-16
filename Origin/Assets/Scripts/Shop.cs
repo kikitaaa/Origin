@@ -55,7 +55,7 @@ public class Shop : MonoBehaviour
     {
         textcoinsText.text = ": " + coins.ToString();
     }
-    public void UpdateHealthPotionText() //Actualizamos el texto de coins y lo mostramos.
+    public void UpdateHealthPotionText() 
     {
         texhealthpotionsText.text = ": " + healthpotions.ToString();
     }
@@ -70,10 +70,29 @@ public class Shop : MonoBehaviour
     }
     public void RemovePotionHealth()
     {
-        healthpotions -= 1;
+        if (healthpotions > 0) // Verifica si hay pociones de salud disponibles
+        {
+            healthpotions -= 1;
+            Debug.Log("Poción de curación consumida.");
+            UpdateHealthPotionText();
+        }
+        else
+        {
+            Debug.Log("No tienes pociones de salud disponibles.");
+        }
     }
+
     public void RemovePotionSpeed()
     {
-        speedpotions -= 1;
+        if (speedpotions > 0) // Verifica si hay pociones de velocidad disponibles
+        {
+            speedpotions -= 1;
+            Debug.Log("Poción de velocidad consumida.");
+            UpdateSpeedPotionText();
+        }
+        else
+        {
+            Debug.Log("No tienes pociones de velocidad disponibles.");
+        }
     }
 }
