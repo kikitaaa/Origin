@@ -26,16 +26,37 @@ public class Ice : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+            Kai player = collision.gameObject.GetComponent<Kai>();
+            if (player != null)
+            {
+               
+               
+               player.TakeDamage(10); // O la cantidad de daño que desees
+               Debug.Log("-10 de salud");
+
+
+            }  
+            
         }
-
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
             Destroy(gameObject);
+            Debug.Log("Choque con player");
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Debug.Log("Choque con player");
         }
     }
 }
