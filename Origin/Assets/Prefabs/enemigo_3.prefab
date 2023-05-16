@@ -146,3 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4273e17e5b8afa54ba8304d350d7d67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kaiSound: {fileID: 8300000, guid: 0c91ee035c1508647a4388fb4644a814, type: 3}
+  kaiVolume: 0.227

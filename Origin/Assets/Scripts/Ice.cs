@@ -8,6 +8,9 @@ public class Ice : MonoBehaviour
    
     private float maxTime = 5f;
     private float currentTime = 0;
+    public AudioClip kaiSound;
+    [Range(0, 1)]
+    public float kaiVolume;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,7 @@ public class Ice : MonoBehaviour
                
                player.TakeDamage(10); // O la cantidad de daño que desees
                Debug.Log("-10 de salud");
+                AudioManager.instance.PlayAudio(kaiSound, kaiVolume);
 
 
             }  
